@@ -1,46 +1,46 @@
-class Scrabble
+require('pry')
+
+class Word
   def initialize(word)
     @word = word
   end
 
-  def score
-      score = Hash.new()
-      score.store("a", 1)
-      score.store("e", 1)
-      score.store("i", 1)
-      score.store("o", 1)
-      score.store("u", 1)
-      score.store("l", 1)
-      score.store("n", 1)
-      score.store("r", 1)
-      score.store("s", 1)
-      score.store("t", 1)
-      score.store("d", 2)
-      score.store("g", 2)
-      score.store("b", 3)
-      score.store("c", 3)
-      score.store("m", 3)
-      score.store("p", 3)
-      score.store("f", 4)
-      score.store("h", 4)
-      score.store("v", 4)
-      score.store("w", 4)
-      score.store("y", 4)
-      score.store("k", 5)
-      score.store("j", 8)
-      score.store("x", 8)
-      score.store("q", 10)
-      score.store("z", 10)
+  def scrabble
+    block_scores = {
+      'a' => 1,
+      'e' => 1,
+      'i' => 1,
+      'o' => 1,
+      'u' => 1,
+      'l' => 1,
+      'n' => 1,
+      'r' => 1,
+      's' => 1,
+      't' => 1,
+      'd' => 2,
+      'g' => 2,
+      'b' => 3,
+      'c' => 3,
+      'm' => 3,
+      'p' => 3,
+      'f' => 4,
+      'h' => 4,
+      'v' => 4,
+      'y' => 4,
+      'k' => 5,
+      'j' => 8,
+      'x' => 8,
+      'q' => 10,
+      'z' => 10
+    }
 
-    words = @word.split('')
+    letters = @word.split('')
     total = 0
 
-    words.each do |array_element|
-      point = score.fetch(array_element)
+    letters.each do |letter|
+      point = block_scores.fetch(letter)
       total += point
     end
     total
-
   end
-
 end
