@@ -36,7 +36,7 @@
 * `$ bundle install`
 
 ### Run rspec in the terminal's home directory path
-* `title_case $ rspec`
+* `scrabble $ rspec`
 
 ## Technologies Used
 * Ruby
